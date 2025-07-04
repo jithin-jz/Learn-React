@@ -6,7 +6,7 @@ import { useState } from 'react'
 const Home = () => {
 
      const [language,setLanguage] = useState('python')
-     const [name,setName] = useState({name:"Akshay"})
+     const  [name,setName] = useState({name:"Akshay"})
      const [work,changeWork] = useState('web developer')
 
       const logData = (x,y) =>{
