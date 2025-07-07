@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [task, setTask] = useState('');
+  const [tasks, setTasks] = useState([]);
+
+  function addTask() {
+    if (task !== '') {
+      setTasks([...tasks, task]);
+      setTask('');
+    }
+  }
+
+  function deleteTask(index) {
+    const newTasks = tasks.filter((_, i) => i !== index);
+    setTasks(newTasks);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <input value={task} onChange={e => setTask(e.target.value)} />
+      <button onClick={addTask}>Add</button>
+
+      {tasks.map((t, i) => (
+        <div key={i}>
+          {t} <button onClick={() => deleteTask(i)}>Delete</button>
+        </div>
+      ))}
+    </div>
+  );
 }
 
-export default App
+export default App;
