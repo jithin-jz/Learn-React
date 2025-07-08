@@ -1,31 +1,33 @@
-import React, { useState } from 'react';
+// import React from 'react'
 
-const App = () => {
-  const [task, setTask] = useState('');
-  const [list, setList] = useState([]);
+// const App = () => {
+//   const handleClick = () => {
+//     alert('subscriberd')
+//   }
+//   return (
+//     <div>
+//       <button onClick={handleClick}>click here</button>
+//     </div>
+//   )
+// }
 
-  const addTask = () => {
-    if (task.trim()) {
-      setList([...list, task]);
-      setTask('');
-    }
-  };
+// export default App
 
-  return (
-    <div>
-      <input 
-        type="text"
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
-      />
-      <button onClick={addTask}>ADD</button>
-      <ul>
-        {list.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+// import React, { useState } from 'react'
 
-export default App;
+// const App = () => {
+//   const[value,setValue] = useState('')
+
+//   const handleChanges=(e)=>{
+//     setValue(e.target.value)
+//   }
+//   return (
+//     <div>
+//       <input type="text" name="" id="" onChange={handleChanges} />
+//       <p>Text:{value}</p>
+//     </div>
+//   )
+// }
+
+// export default App
+
