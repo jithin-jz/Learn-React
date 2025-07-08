@@ -1,21 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react';
 
 const App = () => {
-  const [people,newPeople] = useState([])
-  
-  useEffect(()=>{
-    async function getUser() {
-      const api = await fetch('https://jsonplaceholder.typicode.com/users')
-      const data = await api.json()
-      newPeople(data)
+  const [task, setTask] = useState('');
+  const [list, setList] = useState([]);
+
+  const addTask = () => {
+    if (task.trim()) {
+      setList([...list, task]);
+      setTask('');
     }
-    getUser()
-  },[])
+  };
+
   return (
     <div>
-      {people.map(x=><p>{x.name}</p>)}
+      <input 
+        type="text"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+      />
+      <button onClick={addTask}>ADD</button>
+      <ul>
+        {list.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
