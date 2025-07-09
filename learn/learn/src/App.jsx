@@ -31,3 +31,47 @@
 
 // export default App
 
+// import React, { useState } from 'react'
+
+// const App = () => {
+//     const[count,setCount]=useState(0)
+
+//     const max = () =>{
+//         setCount(p=>p+1)
+//     }
+//     const min = () =>{
+//         setCount(p=>p-1)
+//     }
+//     const reset = () =>{
+//         setCount(0)
+//     }
+//   return (
+//     <div>
+//       <p>{count}</p>
+//       <button onClick={max}>+</button>
+//       <button onClick={min}>-</button>
+//       <button onClick={reset}>reset</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// import React, { useRef } from 'react';
+
+// function App() {
+//   const inputRef = useRef(null);
+
+//   const focusInput = () => {
+//     inputRef.current.focus(); // Direct DOM access
+//   };
+
+//   return (
+//     <div>
+//       <input ref={inputRef} type="text" />
+//       <button onClick={focusInput}>Focus Input</button>
+//     </div>
+//   );
+// }
+// export default App
