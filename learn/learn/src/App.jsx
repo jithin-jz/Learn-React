@@ -61,3 +61,19 @@
 
 // export default App
 
+// import React, { useState } from 'react'
+
+// const App = () => {
+//   const[color,setColor] = useState(false)
+//   return (
+//     <div style={{background:color?'black':'white',height:'100vh'}}>
+//       <button onClick={()=> setColor(!color)}>switch</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
