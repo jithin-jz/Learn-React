@@ -74,6 +74,18 @@
 
 // export default App
 
+// import React, { useState } from 'react'
 
+// const App = () => {
+//   const[text,addText] = useState('')
+//   return (
+//     <div>
+//       <input type="text"
+//       onChange={(e)=>addText(e.target.value)}
+//       />
+//       <p>Your Text:{text}</p>
+//     </div>
+//   )
+// }
 
-
+// export default App
