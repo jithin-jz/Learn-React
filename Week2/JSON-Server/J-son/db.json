@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Jithin",
+      "email": "jithin@mail.com"
+    },
+    {
+      "id": "2",
+      "name": "Alex",
+      "email": "alex@mail.com"
+    },
+    {
+      "id": "3",
+      "name": "anand",
+      "email": "fimep70976@datingso.com"
+    },
+    {
+      "id": "4",
+      "name": "abhinav",
+      "email": "fimep70976@datingso.com"
+    },
+    {
+      "id": "5",
+      "name": "amal",
+      "email": "fimep70976@datingso.com"
+    }
+  ]
+}
