@@ -1,23 +1,21 @@
-import React, { useReducer } from 'react';
+import React, { useReducer } from 'react'
 
-const reducer = (state, action) => {
-  if (action === 'inc') return state + 1;
-  if (action === 'dec') return state - 1;
-  if (action === 'reset') return 0;
-  return state;
-};
+const reducer = (state,action)=>{
+  if(action === 'inc') return state + 1;
+  if(action === 'dec') return state - 1;
+  if(action === 'reset') return 0;
+}
 
 const App = () => {
-  const [count, dispatch] = useReducer(reducer, 0);
-
+  const [count,dipatch] = useReducer(reducer,0);
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
+    <div>
       <h1>Count: {count}</h1>
-      <button onClick={() => dispatch('inc')}>+</button>
-      <button onClick={() => dispatch('dec')}>-</button>
-      <button onClick={() => dispatch('reset')}>Reset</button>
+      <button onClick={() => dipatch('dec')}>➖</button>
+      <button onClick={() => dipatch('inc')}>➕</button>
+      <button onClick={() => dipatch('reset')}>🌀</button>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
