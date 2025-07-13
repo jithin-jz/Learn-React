@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [users, setUsers] = useState([]);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const limit = 5; // items per page
+
+  const fetchUsers = async () => {
+    const res = await fetch(`http://localhost:3000/users?_page=${page}&_limit=${limit}`);
+    const data = await res.json();
+    const totalCount = res.headers.get("X-Total-Count"); // Total records
+    setUsers(data);
+    setTotalPages(Math.ceil(totalCount / limit));
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, [page]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      <h2>Paginated Users</h2>
+      <ul>
+        {users.map(user => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
 
-export default App
+      <div style={{ marginTop: 20 }}>
+        <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+          Prev
+        </button>
+        <span style={{ margin: "0 10px" }}>Page {page} of {totalPages}</span>
+        <button onClick={() => setPage(page + 1)} disabled={page === totalPages}>
+          Next
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default App;
