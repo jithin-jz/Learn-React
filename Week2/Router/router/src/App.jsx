@@ -1,22 +1,25 @@
+// App.jsx
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
+import About from './pages/About'
 import Product from './pages/Product'
-import { Routes,Route } from 'react-router-dom'
+import Contact from './pages/Contact'
 
 const App = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      <Home/>
 
       <Routes>
-        <Route path='/' element = {<Home/>}/>
-        <Route path='/' element = {<About/>}/>
-        <Route path='/' element = {<Product/>}/>
-        <Route path='/' element = {<Contact/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-    </div>
+    </>
   )
 }
 
