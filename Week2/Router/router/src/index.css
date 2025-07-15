@@ -11,6 +11,12 @@ body {
   padding: 12px 24px;
   background-color: #1f2937; /* dark gray */
   color: white;
+  flex-wrap: wrap;
+}
+
+.navbar .brand {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .nav-links {
@@ -42,4 +48,25 @@ body {
 
 .login-btn:hover {
   background-color: #2563eb;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .login-btn {
+    align-self: flex-start;
+    margin-top: 10px;
+  }
 }
