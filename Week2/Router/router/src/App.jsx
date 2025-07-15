@@ -1,26 +1,30 @@
-// App.jsx
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React from 'react';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from 'react-router-dom';
 
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import About from './pages/About'
-import Product from './pages/Product'
-import Contact from './pages/Contact'
+import RouteLayout from './layout/RouteLayout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Product from './pages/Product';
+import Contact from './pages/Contact';
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RouteLayout />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="product" element={<Product />} />
+      <Route path="contact" element={<Contact />} />
+    </Route>
+  )
+);
 
 const App = () => {
-  return (
-    <>
-      <Navbar />
+  return <RouterProvider router={router} />;
+};
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </>
-  )
-}
-
-export default App
+export default App;
