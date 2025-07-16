@@ -1,15 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react';
+import PaginatedList from './components/PaginatedList';
 
 const App = () => {
-    const [count,setCount] = useState(0)
-
   return (
-    <div>
-      <h1>Count:{count}</h1>
-      <button onClick={()=>setCount(count-1)}>➖</button>
-      <button onClick={()=>setCount(count+1)}>➕</button>
+    <div className="min-h-screen bg-gray-50 p-4">
+      <PaginatedList />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

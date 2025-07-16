@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "id":1,
+            "name":"Jithin",
+            "place":"kozhikode"
+    },
+    {
+            "id":2,
+            "name":"Anand",
+            "place":"kochi"
+    }
+    ]
+}
