@@ -12,6 +12,7 @@ import About from './pages/About';
 import Product from './pages/Product';
 import Contact from './pages/Contact';
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RouteLayout />}>
@@ -28,3 +29,6 @@ const App = () => {
 };
 
 export default App;
+
+
+
